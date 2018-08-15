@@ -1,23 +1,30 @@
-package cn.com.cintel.sky_android.activity;
+package cn.com.cintel.sky_android.activity.main_activity;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.com.cintel.sky_android.R;
+import cn.com.cintel.sky_android.bean.goodsdetail.GoodsDetail;
 import cn.com.cintel.sky_android.fragment.HomeFragment;
 import cn.com.cintel.sky_android.fragment.MyFragment;
 import cn.com.cintel.sky_android.fragment.ScanFragment;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, BottomNavigationBar.OnTabSelectedListener {
+public class MainActivity extends AppCompatActivity
+        implements View.OnClickListener,
+        BottomNavigationBar.OnTabSelectedListener,MainContract.View {
 
 
     @BindView(R.id.tb)
@@ -28,12 +35,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private MyFragment mMyFragment;
     private ScanFragment mScanFragment;
     private HomeFragment mHomeFragment;
+    private MainPresenter mainPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        //presenter的定义
+        mainPresenter = new MainPresenter(this);
+        Map<String,String> stringMap=new HashMap<>();
+        mainPresenter.getNetworkDate("3506",stringMap);
 
         initView();
         initBottomBar();
@@ -136,5 +149,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onTabReselected(int position) {
 
+    }
+
+    @Override
+    public void onSuccess(GoodsDetail goodsDetail) {
+        Log.i("sky","MVP的view");
     }
 }

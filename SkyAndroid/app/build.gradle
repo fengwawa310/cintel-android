@@ -44,6 +44,8 @@ dependencies {
     api group: 'org.greenrobot', name: 'eventbus', version: '3.0.0'
     // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
     api group: 'com.github.bumptech.glide', name: 'glide', version: '4.7.1'
+    // https://mvnrepository.com/artifact/com.j256.ormlite/ormlite-android
+    api group: 'com.j256.ormlite', name: 'ormlite-android', version: '4.48'
 
 
 }

@@ -6,16 +6,20 @@ import com.google.gson.GsonBuilder;
 
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.Map;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.X509TrustManager;
 
 import cn.com.cintel.sky_android.App;
+import cn.com.cintel.sky_android.bean.goodsdetail.GoodsDetail;
+import cn.com.cintel.sky_android.config.UrlConfig;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observable;
 
 public class HttpHelper {
 
@@ -101,8 +105,8 @@ public class HttpHelper {
      * }
      */
     //   http://115.159.227.219:8088/fanfou-api/goods/detail/3506?access_token=defaultValue
-//    public Observable<GoodsDetail> getGoodsDetail(String id, Map<String, String> map) {
-//        return service.getGoodsDetail(id, map);
-//    }
+    public Observable<GoodsDetail> getGoodsDetail(String id, Map<String, String> map) {
+        return service.getGoodsDetail(id, map);
+    }
 }
 
