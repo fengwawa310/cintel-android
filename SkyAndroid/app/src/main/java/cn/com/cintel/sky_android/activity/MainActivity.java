@@ -1,4 +1,4 @@
-package cn.com.cintel.sky_android;
+package cn.com.cintel.sky_android.activity;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -12,6 +12,7 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.com.cintel.sky_android.R;
 import cn.com.cintel.sky_android.fragment.HomeFragment;
 import cn.com.cintel.sky_android.fragment.MyFragment;
 import cn.com.cintel.sky_android.fragment.ScanFragment;
@@ -103,19 +104,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (position) {
             case 0:
                 if (mHomeFragment == null) {
-                    mHomeFragment = HomeFragment.newInstance("首页");
+                    mHomeFragment = HomeFragment.newInstance(this.getString(R.string.home));
                 }
                 transaction.replace(R.id.tb, mHomeFragment);
                 break;
             case 1:
                 if (mScanFragment == null) {
-                    mScanFragment = ScanFragment.newInstance("扫一扫");
+                    mScanFragment = ScanFragment.newInstance(this.getString(R.string.scan));
                 }
                 transaction.replace(R.id.tb, mScanFragment);
                 break;
             case 2:
                 if (mMyFragment == null) {
-                    mMyFragment = MyFragment.newInstance("个人中心");
+                    mMyFragment = MyFragment.newInstance(this.getString(R.string.mine));
                 }
                 transaction.replace(R.id.tb, mMyFragment);
                 break;

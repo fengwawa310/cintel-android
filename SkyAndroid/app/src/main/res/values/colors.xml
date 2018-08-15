@@ -5,5 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="ActiveColor">#FF107FFD</color>
     <color name="InActiveColor">#e9e6e6</color>
-    <color name="BarBackgroundColor">#1ccbae</color>
+    <color name="BarBackgroundColor">#FFFFFF</color>
 </resources>
