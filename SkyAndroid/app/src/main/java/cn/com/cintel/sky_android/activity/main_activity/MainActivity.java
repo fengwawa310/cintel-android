@@ -20,7 +20,7 @@ import cn.com.cintel.sky_android.R;
 import cn.com.cintel.sky_android.bean.goodsdetail.GoodsDetail;
 import cn.com.cintel.sky_android.fragment.HomeFragment;
 import cn.com.cintel.sky_android.fragment.MyFragment;
-import cn.com.cintel.sky_android.fragment.ScanFragment;
+import cn.com.cintel.sky_android.fragment.ScanFragment.ScanFragment;
 
 public class MainActivity extends AppCompatActivity
         implements View.OnClickListener,

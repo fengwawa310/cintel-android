@@ -6,4 +6,5 @@
     <color name="ActiveColor">#FF107FFD</color>
     <color name="InActiveColor">#e9e6e6</color>
     <color name="BarBackgroundColor">#FFFFFF</color>
+    <color name="divider">#D8FC99</color>
 </resources>
